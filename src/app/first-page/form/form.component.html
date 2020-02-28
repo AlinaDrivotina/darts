@@ -1,6 +1,5 @@
 <form 
 [formGroup]="playerForm"
-(ngSubmit)="submit()"
 >
     <br>
     <div class="form">
@@ -46,4 +45,8 @@
         <button id="adding" (click)="addingNewUser()">Add</button> 
     </div>  
 </form>
+<br/><br/>   
+<div id="forCheck">
+    {{playerForm.value | json}}
+</div>
 

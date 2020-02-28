@@ -1,5 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { FormGroup, Validators, FormBuilder, NgForm } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder} from '@angular/forms';
+import { PlayerService } from '../player.service';
+
 
 @Component({
   selector: 'app-form',
@@ -13,7 +15,8 @@ export class FormComponent implements OnInit {
 
   constructor(
     public formBuilder: FormBuilder,
-    public changeDetectorRef: ChangeDetectorRef
+    public changeDetectorRef: ChangeDetectorRef,
+    playerS: PlayerService
     ) {
     this.playerForm = this.formBuilder.group({
       nickname: ["Player", [
@@ -24,19 +27,15 @@ export class FormComponent implements OnInit {
       ],
       email: [null, Validators.email]
     });
+
   }
-  
-  nickName;
-  mail;
 
   addingNewUser() {
-    this.nickName = (<HTMLInputElement>document.getElementById('nickname')).value;
-    this.mail = (<HTMLInputElement>document.getElementById('email')).value;
-    alert(`nickname: ${this.nickName} \nemail: ${this.mail}`);
+   // обработчик кнопки, который переотрисовывает страницу
   }
 
   ngOnInit(): void {
-    
+  
   }
 
   get nickname() { 
@@ -52,4 +51,5 @@ export class FormComponent implements OnInit {
   }
 
 }
+
 
