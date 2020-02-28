@@ -1,0 +1,49 @@
+<form 
+[formGroup]="playerForm"
+(ngSubmit)="submit()"
+>
+    <br>
+    <div class="form">
+        <label>Nickname</label>
+        <input 
+            id="nickname"
+            value="Player"
+            name="nickname"
+            formControlName="nickname"
+            type="text"
+            title="Nickname"
+            placeholder="Enter your nickname" 
+        />
+        <div class="error"
+            *ngIf="nickname.invalid && nickname.value"
+        >
+            <div *ngIf="nickname.errors.required">
+                This field if required.
+            </div>
+            <div *ngIf="nickname.errors.pattern">
+                Incorrect nickname.
+                Supported Latin input without signs and numbers.
+            </div>
+        </div>
+        <br>
+        <br>
+        <label>e-mail</label>
+        <br>
+        <input 
+            id="email"
+            value=" "
+            name="email"
+            formControlName="email"
+            type="email"
+            title="e-mail"
+            placeholder="Enter your e-mail" 
+        />
+        <div class="error"
+            *ngIf="playerForm.controls['email'].invalid"
+        >
+            Incorrect e-mail.
+        </div>
+        <button id="adding" (click)="addingNewUser()">Add</button> 
+    </div>  
+</form>
+

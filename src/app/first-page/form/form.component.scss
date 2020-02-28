@@ -1,0 +1,35 @@
+.form {
+    text-align: left;
+    width: 300px;
+    margin: auto;
+
+    input {
+        height: 25px;
+        width: 296px;
+        border-radius: 3px;
+        margin: auto;
+        font-size: 15px;
+    }
+
+    label {
+        margin-bottom: -0px;
+        color: rgb(255, 255, 255);
+    }
+
+    button {
+        width: 300px;
+        height: 40px;
+        margin-top: 40px;
+        border-radius: 3px;
+        font-size: 15px;
+        background-color: rgb(255, 230, 0);
+        color: rgba(0, 0, 0, 0.801);
+        
+    }
+    
+    .error {
+        color: rgb(202, 4, 4);
+        font-weight: bold;
+    }
+}
+
