@@ -1,0 +1,60 @@
+.form {
+    text-align: left;
+    padding-top: 150px;
+    width: 609px;
+    margin: auto;
+
+    #newPlayer {
+        width: 300px;
+        height: 40px;
+        border-radius: 5px;
+        margin-left: 14px;
+        font-size: 17px;
+        background-color: rgb(255, 230, 0);
+        color: rgba(0, 0, 0, 0.801);
+        border: none;
+    }
+
+    #search {
+        width: 300px;
+        height: 40px;
+        font-size: 17px;
+        border-radius: 5px;
+        text-align: left;
+        border: none;
+        padding: 15px;
+    }
+
+    #searchBtn {
+        margin-left: -30px;
+        border: none;
+        background-color: white;
+        font-size: 17px;
+        color: rgba(0, 0, 0, 0.664);
+    }
+
+    #players {
+        margin-top: 10px;
+        >div {
+            margin-top: 1px;
+            background-color: white; 
+            border-radius: 5px;
+            height: 30px;
+            padding-top: 10px;
+          
+            >div {
+                margin-left: 15px;
+                font-size: 17px;
+                width: 258px;
+                display: inline-block;
+                text-align: left;
+                color: rgba(0, 0, 0, 0.801);
+            }
+        }
+
+        >div:active {
+            border: 4px solid  rgb(255, 196, 0);
+        }
+    }
+}
+

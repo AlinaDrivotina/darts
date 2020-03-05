@@ -1,6 +1,10 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormGroup, Validators, FormBuilder} from '@angular/forms';
 import { PlayerService } from '../player.service';
+import { Router } from '@angular/router';
+import { invalid } from '@angular/compiler/src/render3/view/util';
+
+
 
 
 @Component({
@@ -16,7 +20,8 @@ export class FormComponent implements OnInit {
   constructor(
     public formBuilder: FormBuilder,
     public changeDetectorRef: ChangeDetectorRef,
-    playerS: PlayerService
+    private playerS: PlayerService,
+    private router: Router, 
     ) {
     this.playerForm = this.formBuilder.group({
       nickname: ["Player", [
@@ -27,15 +32,16 @@ export class FormComponent implements OnInit {
       ],
       email: [null, Validators.email]
     });
-
   }
 
   addingNewUser() {
-   // обработчик кнопки, который переотрисовывает страницу
+    if (this.playerForm.invalid) { return; }
+    this.playerS.addNewPlayer(this.playerForm.value);
+    this.router.navigate(['/selection']);
   }
 
   ngOnInit(): void {
-  
+
   }
 
   get nickname() { 
@@ -46,10 +52,11 @@ export class FormComponent implements OnInit {
     return this.playerForm.get('email'); 
   }
 
-  submit() {
-    console.log(this.playerForm);
-  }
+  // submit() {
+  //   alert(this.playerForm);
+  // }
 
 }
+
 
 

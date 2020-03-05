@@ -10,6 +10,13 @@ import { FormComponent } from './first-page/form/form.component';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { PlayerGameSelectionComponent } from './player-game-selection/player-game-selection.component';
 import { PlayerService } from './first-page/player.service';
+import { LogoComponent } from './player-game-selection/logo/logo.component';
+import { PlayersComponent } from './player-game-selection/players/players.component';
+import { GameComponent } from './player-game-selection/game/game.component';
+import { StartButtonComponent } from './player-game-selection/start-button/start-button.component';
+import { ResultTableComponent } from './result-table/result-table.component';
+import { LogoLogoComponent } from './result-table/logo-logo/logo-logo.component';
+import { TableGamePlayerComponent } from './result-table/table-game-player/table-game-player.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +24,14 @@ import { PlayerService } from './first-page/player.service';
     TitleComponent,
     FormComponent,
     FirstPageComponent,
-    PlayerGameSelectionComponent
+    PlayerGameSelectionComponent,
+    LogoComponent,
+    PlayersComponent,
+    GameComponent,
+    StartButtonComponent,
+    ResultTableComponent,
+    LogoLogoComponent,
+    TableGamePlayerComponent
   ],
   imports: [
     BrowserModule,

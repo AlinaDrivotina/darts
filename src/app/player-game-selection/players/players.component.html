@@ -1,0 +1,22 @@
+<form class="form">
+    <div class="head">
+        <input id="search" type="search" placeholder="Search">
+        <button id="searchBtn" type="submit" (click)="searching()">&#128269;</button>
+        <button id="newPlayer" (click)="newPlayer()">New player</button>
+    </div>
+    <div id="players">
+        <div class="user" *ngFor="let player of playerS.getNewPlayer(); let i = index" (click)="userSelected(i)">
+            <div>{{ player.nickname }}</div>
+            <div>{{ player.email }}</div>
+            <div 
+                style="width: 20px; 
+                text-align: right; 
+                color: rgba(54, 180, 238, 0.616); 
+                font-size: 17px;
+                font-weight: bold"
+                (click)="deleteUser(i)">X
+            </div>
+        </div>
+    </div>
+</form> 
+

@@ -11,13 +11,12 @@
             formControlName="nickname"
             type="text"
             title="Nickname"
-            placeholder="Enter your nickname" 
+            maxlength="20"
+            placeholder="Enter your nickname"
         />
-        <div class="error"
-            *ngIf="nickname.invalid && nickname.value"
-        >
+        <div class="error" *ngIf="nickname.invalid">
             <div *ngIf="nickname.errors.required">
-                This field if required.
+                This field is required.
             </div>
             <div *ngIf="nickname.errors.pattern">
                 Incorrect nickname.
@@ -37,16 +36,10 @@
             title="e-mail"
             placeholder="Enter your e-mail" 
         />
-        <div class="error"
-            *ngIf="playerForm.controls['email'].invalid"
-        >
+        <div class="error"*ngIf="playerForm.controls['email'].invalid">
             Incorrect e-mail.
         </div>
         <button id="adding" (click)="addingNewUser()">Add</button> 
     </div>  
 </form>
-<br/><br/>   
-<div id="forCheck">
-    {{playerForm.value | json}}
-</div>
 

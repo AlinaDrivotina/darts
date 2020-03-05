@@ -1,0 +1,39 @@
+.game {
+    padding-top: 60px;
+    color: white;
+    text-align: left;
+    font-size: 19px;
+    margin: auto;
+    width: 609px;
+    #game501 {
+        border-radius: 50%;
+        font-size: 35px;
+        font-weight: bolder;
+        color: rgba(0, 0, 0, 0.658);
+        background-color: white;
+        border: none;
+        height: 100px;
+        width: 100px;
+    }
+    #game501:active {
+       background-color: rgb(255, 230, 0);
+       color: rgb(0, 0, 0);
+    }
+
+    #game301:active {
+        background-color: rgb(255, 230, 0);
+        color: rgb(0, 0, 0);
+     }
+
+    #game301 {
+        margin-left: 20px;
+        border-radius: 50%;
+        font-size: 35px;
+        font-weight: bolder;
+        color: rgba(0, 0, 0, 0.658);
+        background-color: white;
+        border: none;
+        height: 100px;
+        width: 100px;
+    }
+}
