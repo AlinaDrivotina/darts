@@ -1,7 +1,10 @@
-<div class="game" (click)=gameSelection($event)>
+<div class="game">
     <label>Choose game</label>
     <br><br>
-    <button id='game501' value="501">501</button>
-    <button id="game301" value="301">301</button>
+    <div class="buttons" (click)=gameSelection($event)>
+        <button class="g1" value="501">501</button>
+        <button class="g2" value="301">301</button>
+    </div>
 </div>
+
 

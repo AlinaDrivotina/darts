@@ -1,30 +1,38 @@
 <div class="gameSteps">
-    <div class="gamePointsForPlayer">
-      <div class="plrnm">Player</div>
+   <div class="gamePointsForPlayer" *ngFor="let player of playerS.getNewPlayer()"> <!--  нужен индекс выделенного элемента -->
+      <div class="plrnm">{{ playerNickname }}</div>
       <div class="dart">Dart 1
         <div class="fordart">
             <div><input type="text"></div>
-            <div class="step">1x</div>
-            <div class="step">2x</div>
-            <div class="step3">3x</div>
+            <div class="points">
+              <div class="step">1x</div>
+              <div class="step">2x</div>
+              <div class="step3">3x</div>
+          </div>
         </div>
       </div>
       <div class="dart">Dart 2
         <div class="fordart">
             <div><input type="text"></div>
-            <div class="step">1x</div>
-            <div class="step">2x</div>
-            <div class="step3">3x</div>
+            <div class="points">
+              <div class="step">1x</div>
+              <div class="step">2x</div>
+              <div class="step3">3x</div>
+            </div>
         </div>
       </div>
       <div class="dart">Dart 3
         <div class="fordart">
             <div><input type="text"></div>
-            <div class="step">1x</div>
-            <div class="step">2x</div>
-            <div class="step3">3x</div>
+            <div class="points">
+              <div class="step">1x</div>
+              <div class="step">2x</div>
+              <div class="step3">3x</div>
+            </div>
         </div>
       </div>
     </div>
-  </div>
+    <button id="btnAdd">Add</button>
+</div>
+<hr>
 

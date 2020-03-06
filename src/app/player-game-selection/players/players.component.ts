@@ -29,7 +29,6 @@ export class PlayersComponent implements OnInit {
 
   userSelected(i) {
     let selectedPl = this.playerS.selectedPlayer(i);
-    alert(selectedPl);
   }
 
   searching() {

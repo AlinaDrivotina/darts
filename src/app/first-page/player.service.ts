@@ -28,5 +28,6 @@ export class PlayerService {
   pushingPlayer() {
     return this.nick;
   }
+  
 }
 

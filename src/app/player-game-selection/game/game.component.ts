@@ -15,8 +15,15 @@ export class GameComponent implements OnInit {
 
   gameSelection(e) {
     let el = e.target;
+    let btn1 = document.getElementsByClassName('g1');
+    let btn2 = document.getElementsByClassName('g2');
     this.gameS.chooseGame(el.value);
-    alert(el.value);
+    el.classList.toggle("newg");
+    if (el === document.getElementsByClassName('g1')) {
+      el.classList.toggle("newg1");
+    } else {
+      el.classList.toggle("newg2"); // решить вопрос со стилями
+    }
   }
 
 }

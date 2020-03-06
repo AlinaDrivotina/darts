@@ -2,14 +2,28 @@
     color: white;
     width: 950px;
     margin: auto;
+    text-align: center;
+
+    // >div { display: inline-block;}
+
+    #btnAdd {
+        margin-top: 60px;
+        width: 350px;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        font-size: 17px;
+        background-color: rgb(255, 230, 0);
+        color: rgba(0, 0, 0, 0.801);
+    }
 
     .gamePointsForPlayer {
 
-        width: 210px;
+        width: 250px;
 
         .plrnm {
             text-align: left;
-            padding-left: 50px;
+            padding-left: 75px;
         }
         
         .dart {
@@ -18,44 +32,64 @@
             }
 
             .fordart {
-                background-color:white;
-                color:  rgb(22, 22, 22);
+                background-color: rgb(59, 57, 57);
+                color:  rgb(59, 57, 57);
                 font-weight: bold;
-                border: 1px solid rgb(22, 22, 22);
+                border: 1px solid rgb(59, 57, 57);
                 margin-top: 3px;
-                padding: 2px 2px 2px 3px;
+                padding: 1px 1px 1px 1px;
                 border-radius: 2px 10px 10px 2px;
+
+                .points {
+                    background-color: white;
+                    border-radius: 2px 10px 10px 2px;
+                    >div {
+                        display: inline-block;
+                    }
+
+                    .step {
+                        border: 1px solid rgb(59, 57, 57);
+                        padding: 3px 3px 0 3px;
+                        height: 25px;
+                        width: 25px;
+                        text-align: center;
+                    }
+    
+                    .step:active, .step3:active {
+                        background-color: rgb(59, 57, 57);
+                        color: white;
+                    }
+        
+                    .step3 {
+                        border: 1px solid rgb(59, 57, 57);
+                        padding: 3px 3px 0 3px;
+                        height: 25px;
+                        border-radius: 0 10px 10px 0;
+                        width: 25px;
+                        text-align: center;
+                    }
+
+                }
                 >div {
                     display: inline-block;
                 }
-    
-                .step {
-                    margin-left: 6px;
-                    border: 1px solid rgb(22, 22, 22);
-                    padding: 3px 3px 0 3px;
-                    height: 25px;
-                }
 
-                .step:active, .step3:active {
-                    background-color: rgb(22, 22, 22);
-                    color: white;
-                }
-    
-                .step3 {
-                    margin-left: 6px;
-                    border: 1px solid rgb(22, 22, 22);
-                    padding: 3px 3px 0 3px;
-                    height: 25px;
-                    border-radius: 0 10px 10px 0;
-                }
-    
                 input {
                     width: 55px;
-                    height: 25px;
+                    height: 26px;
                     border: none;
+                    background-color: white;
+                    margin-right: 2px;
                 }
             }
         }
     }
 }
 
+hr {
+    margin-top: 45px;
+    border: none; 
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.5); 
+    height: 1px; 
+}

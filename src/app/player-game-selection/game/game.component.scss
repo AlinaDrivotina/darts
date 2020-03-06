@@ -5,35 +5,105 @@
     font-size: 19px;
     margin: auto;
     width: 609px;
-    #game501 {
-        border-radius: 50%;
-        font-size: 35px;
-        font-weight: bolder;
-        color: rgba(0, 0, 0, 0.658);
-        background-color: white;
-        border: none;
-        height: 100px;
-        width: 100px;
-    }
-    #game501:active {
-       background-color: rgb(255, 230, 0);
-       color: rgb(0, 0, 0);
+
+    .buttons {
+
+        .g1 {
+            border-radius: 50%;
+            font-size: 35px;
+            font-weight: bolder;
+            color: rgba(0, 0, 0, 0.658);
+            background-color: white;
+            border: none;
+            height: 100px;
+            width: 100px;
+            margin-right: 20px;
+        }
+
+        .newg1 {
+            border-radius: 50%;
+            font-size: 35px;
+            font-weight: bolder;
+            background-color: rgb(255, 230, 0);
+            color: rgb(0, 0, 0);
+            border: none;
+            height: 100px;
+            width: 100px;
+            margin-right: 20px;
+        }
+
+        .g2 {
+            border-radius: 50%;
+            font-size: 35px;
+            font-weight: bolder;
+            color: rgba(0, 0, 0, 0.658);
+            background-color: white;
+            border: none;
+            height: 100px;
+            width: 100px;
+            margin-right: 20px;
+        }
+
+        .newg2 {
+            border-radius: 50%;
+            font-size: 35px;
+            font-weight: bolder;
+            background-color: rgb(255, 230, 0);
+            color: rgb(0, 0, 0);
+            border: none;
+            height: 100px;
+            width: 100px;
+            margin-right: 20px;
+        }
+
+        // >button {
+        //     border-radius: 50%;
+        //     font-size: 35px;
+        //     font-weight: bolder;
+        //     color: rgba(0, 0, 0, 0.658);
+        //     background-color: white;
+        //     border: none;
+        //     height: 100px;
+        //     width: 100px;
+        // }
+
+        // :last-child {
+        //     margin-left: 20px;
+        // }
+
+        // :active {
+        //     border-radius: 50%;
+        //     font-size: 35px;
+        //     font-weight: bolder;
+        //     background-color: rgb(255, 230, 0);
+        //     color: rgb(0, 0, 0);
+        //     border: none;
+        //     height: 100px;
+        //     width: 100px;
+        // }
     }
 
-    #game301:active {
-        background-color: rgb(255, 230, 0);
-        color: rgb(0, 0, 0);
-     }
+    // .newButtons {
 
-    #game301 {
-        margin-left: 20px;
-        border-radius: 50%;
-        font-size: 35px;
-        font-weight: bolder;
-        color: rgba(0, 0, 0, 0.658);
-        background-color: white;
-        border: none;
-        height: 100px;
-        width: 100px;
-    }
+    //     >button {
+    //         border-radius: 50%;
+    //         font-size: 35px;
+    //         font-weight: bolder;
+    //         background-color: rgb(255, 230, 0);
+    //         color: rgb(0, 0, 0);
+    //         border: none;
+    //         height: 100px;
+    //         width: 100px;
+    //     }
+
+    //     :last-child {
+    //         margin-left: 20px;
+    //     }
+    // }
+
 }
+
+
+
+
+   

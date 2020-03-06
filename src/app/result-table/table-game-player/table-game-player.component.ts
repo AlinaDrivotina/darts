@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerService } from 'src/app/first-page/player.service';
 
 @Component({
   selector: 'app-table-game-player',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableGamePlayerComponent implements OnInit {
 
-  constructor() { }
+  constructor(public playerS: PlayerService) { }
 
   ngOnInit(): void {
   }
+
+  playerNickname = this.playerS.pushingPlayer();
 
 }
