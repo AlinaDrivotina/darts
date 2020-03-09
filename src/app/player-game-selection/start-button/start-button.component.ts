@@ -21,18 +21,15 @@ export class StartButtonComponent implements OnInit {
   startGame() {
     let game = this.gameS.getGame();
     let player = this.playerS.pushingPlayer();
-    if (game === '501' && player != undefined) {
-      this.router.navigate(['/game-501'])
+    if (game === '301' && player != undefined) {
+      this.router.navigate(['/game-301'])
     } else if (game === undefined && player === undefined) {
       return;
-    } else if (game  === '501' && player === undefined) {
+    } else if (game  === '301' && player === undefined) {
       return;
     } else if (game === undefined && player != undefined) {
       return;
     }
-
     
-  } // надо реализовать игру + перейти на новую страницу (маршрут завести)
-    //пушить сюда игрока
-
+  } 
 }

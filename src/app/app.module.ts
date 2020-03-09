@@ -17,6 +17,7 @@ import { StartButtonComponent } from './player-game-selection/start-button/start
 import { ResultTableComponent } from './result-table/result-table.component';
 import { LogoLogoComponent } from './result-table/logo-logo/logo-logo.component';
 import { TableGamePlayerComponent } from './result-table/table-game-player/table-game-player.component';
+import { PointsResultTableComponent } from './result-table/points-result-table/points-result-table.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { TableGamePlayerComponent } from './result-table/table-game-player/table
     StartButtonComponent,
     ResultTableComponent,
     LogoLogoComponent,
-    TableGamePlayerComponent
+    TableGamePlayerComponent,
+    PointsResultTableComponent
   ],
   imports: [
     BrowserModule,

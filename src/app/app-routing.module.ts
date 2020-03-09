@@ -8,7 +8,7 @@ import { ResultTableComponent } from './result-table/result-table.component';
 const routes: Routes = [
   {path: 'new-player', component: FirstPageComponent},
   {path: 'selection', component: PlayerGameSelectionComponent},
-  {path: 'game-501', component: ResultTableComponent}
+  {path: 'game-301', component: ResultTableComponent}
 ];
 
 @NgModule({
