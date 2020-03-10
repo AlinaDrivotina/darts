@@ -8,6 +8,7 @@ import { Injectable } from '@angular/core';
 export class PlayerService {
   arr: any[] = [];
   nick: string;
+  ind: number = 0;
   newArr: any[] = [];
 
   constructor() { 
@@ -23,11 +24,16 @@ export class PlayerService {
   }
   
   selectedPlayer(i: number) {
+    this.ind = i;
     this.nick = this.arr[i].nickname;
     return this.newArr.push(this.arr[i])
   }
 
   pushingPlayer() {
+    return this.newArr;
+  }
+
+  playerNickname() {
     return this.nick;
   }
  

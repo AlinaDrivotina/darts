@@ -14,7 +14,7 @@ export class LogoLogoComponent implements OnInit {
   }
 
   startNewGame() {
-    this.router.navigate(['/selection']);
+    this.router.navigate(['/selection']); // зачистка страницы с игрой 
   }
 
 }

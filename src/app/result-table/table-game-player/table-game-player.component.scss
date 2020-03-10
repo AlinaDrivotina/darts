@@ -1,6 +1,6 @@
-.gameSteps {
+#gameSteps {
     color: white;
-    width: 950px;
+    width: 1000px;
     margin: auto;
     text-align: center;
 
@@ -25,7 +25,7 @@
 
         .plrnm {
             text-align: left;
-            padding-left: 75px;
+            padding-left: 82px;
         }
         
         .dart {
@@ -48,6 +48,7 @@
                     border: none;
                     background-color: white;
                     margin-right: 2px;
+                    padding-left: 2px;
                 }
 
                 .submit {
@@ -67,7 +68,17 @@
                         display: inline-block;
                     }
 
-                    .step {
+                    .step1 {
+                        border: 1px solid rgb(59, 57, 57);
+                        padding: 3px 3px 0 3px;
+                        height: 25px;
+                        width: 25px;
+                        text-align: center;
+                        background-color: rgb(59, 57, 57);
+                        color: white;
+                    }
+
+                    .step2 {
                         border: 1px solid rgb(59, 57, 57);
                         padding: 3px 3px 0 3px;
                         height: 25px;
@@ -75,10 +86,31 @@
                         text-align: center;
                     }
     
-                    .step:active, .step3:active {
+                    .step2:active, .step3:active {
                         background-color: rgb(59, 57, 57);
                         color: white;
                     }
+
+                    .step1:active {
+                        border: 1px solid rgb(59, 57, 57);
+                        padding: 3px 3px 0 3px;
+                        height: 25px;
+                        width: 25px;
+                        text-align: center;
+                        background-color: white;
+                        color: rgb(59, 57, 57);
+                    }
+
+                    // .newStep1 {
+                        // border: 1px solid rgb(59, 57, 57);
+                        // padding: 3px 3px 0 3px;
+                        // height: 25px;
+                        // width: 25px;
+                        // text-align: center;
+                        // background-color: white;
+                        // color: rgb(59, 57, 57);
+                    // }
+                    // при активации полей менялся их стиль
         
                     .step3 {
                         border: 1px solid rgb(59, 57, 57);

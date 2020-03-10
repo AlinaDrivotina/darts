@@ -20,7 +20,7 @@ export class StartButtonComponent implements OnInit {
 
   startGame() {
     let game = this.gameS.getGame();
-    let player = this.playerS.pushingPlayer();
+    let player = this.playerS.playerNickname();
     if (game === '301' && player != undefined) {
       this.router.navigate(['/game-301'])
     } else if (game === undefined && player === undefined) {
