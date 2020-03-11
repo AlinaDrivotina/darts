@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 
-//нужно использовать интерфейс
 export class PlayerService {
   arr: any[] = [];
   nick: string;

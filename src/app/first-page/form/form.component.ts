@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormGroup, Validators, FormBuilder} from '@angular/forms';
 import { PlayerService } from '../player.service';
 import { Router } from '@angular/router';
-import { invalid } from '@angular/compiler/src/render3/view/util';
+
 
 
 

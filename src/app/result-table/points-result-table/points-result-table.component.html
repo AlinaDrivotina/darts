@@ -3,11 +3,11 @@
         <div>{{ first }}</div>
         <div>{{ second }}</div>
     </div>
-    <div class="pointsTable"> <!--Здесь директива ngFor с массивом передаваемых очков -->
-        <div class="num">1</div> <!-- Здесь должна быть переменная, которая инкрементируется-->
+    <div class="pointsTable" *ngFor="let points from pointsService.outputPoints(), let i = index"> <!--Здесь директива ngFor с массивом передаваемых очков -->
+        <div class="num">{{ i }}</div> <!-- Здесь должна быть переменная, которая инкрементируется-->
         <div class="pointsOfPlayer">
-            <div>0</div>
-            <div>0</div>
+            <div>{{ points[0] }}</div>
+            <div>{{ points[1] }}</div>
         </div>
     </div>
     <div class="startPoints">

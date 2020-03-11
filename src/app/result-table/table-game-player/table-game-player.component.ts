@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { PlayerService } from 'src/app/first-page/player.service';
 import { Router } from '@angular/router';
 import { InputOutputPointsService } from '../input-output-points.service';
 import { GameService } from 'src/app/player-game-selection/game.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-table-game-player',
@@ -11,14 +12,37 @@ import { GameService } from 'src/app/player-game-selection/game.service';
 })
 export class TableGamePlayerComponent implements OnInit {
 
+  pointsForm: FormGroup;
+
   constructor(public playerS: PlayerService,
     private router: Router,
     private gameS: GameService,
-    private pointsService: InputOutputPointsService
-  ) { }
+    private pointsService: InputOutputPointsService,
+    public changeDetectorRef: ChangeDetectorRef,
+    public formBuilder: FormBuilder
+  ) {
+    this.pointsForm = this.formBuilder.group({
+      dart1: [null, Validators.required],
+      dart2: [null, Validators.required],
+      dart3: [null, Validators.required]
+    });
+   }
 
   ngOnInit(): void {
   }
+
+  get dart1() {
+    return this.pointsForm.get('dart1');
+  }
+
+  get dart2() {
+    return this.pointsForm.get('dart2');
+  }
+
+  get dart3() {
+    return this.pointsForm.get('dart3');
+  }
+
 
   addAnotherPlayer() {
     let game = this.gameS.getGame();
@@ -29,9 +53,15 @@ export class TableGamePlayerComponent implements OnInit {
     this.router.navigate(['/selection']); // куда должна вести эта кнопка ?? второстепенный вопрос
   }
 
-  submit(e) {
-    let el = (<HTMLInputElement>document.getElementsByClassName('text')[0]).value;
-    alert(el);
+  submitPoints(e) {
+    if (this.pointsForm.invalid) { return; }
+
+    if (e.target === document.getElementsByClassName('submitPoints')[0]) {
+      this.pointsService.inputPointsForPlayer(this.pointsForm.value);
+    } else if ( e.target === document.getElementsByClassName('submitPoints')[1] ) {
+      this.pointsService.inputPountsForAnotherOlayer(this.pointsForm.value);
+    }
+
   }
 
 }
