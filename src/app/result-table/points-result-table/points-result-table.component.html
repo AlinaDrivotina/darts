@@ -1,18 +1,18 @@
-<div class="containerRes"> 
+<form class="containerRes"> 
     <div class="titleOfTable">
         <div>{{ first }}</div>
         <div>{{ second }}</div>
     </div>
-    <div class="pointsTable" *ngFor="let points from pointsService.outputPoints(), let i = index"> <!--Здесь директива ngFor с массивом передаваемых очков -->
-        <div class="num">{{ i }}</div> <!-- Здесь должна быть переменная, которая инкрементируется-->
+    <div class="pointsTable" *ngFor="let points from pointsService.final(); let i = index"> <!--Здесь директива ngFor с массивом передаваемых очков   *ngFor="let points from pointsService.final(), let i = index"  -->
+        <div class="num">{{ i }}</div> <!-- Здесь должна быть переменная, которая инкрементируется  {{ i }}   {{ points[i][0] }}  {{ points[i][1] }} --> 
         <div class="pointsOfPlayer">
-            <div>{{ points[0] }}</div>
-            <div>{{ points[1] }}</div>
+            <div>{{ points[i][0] }}</div>
+            <div>{{ points[i][1] }}</div>
         </div>
     </div>
     <div class="startPoints">
         <div>301</div>
         <div>301</div>
     </div>
-</div>
+</form>
 
