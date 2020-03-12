@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { PlayerService } from 'src/app/first-page/player.service';
 import { Router } from '@angular/router';
 import { InputOutputPointsService } from '../input-output-points.service';
@@ -6,6 +6,7 @@ import { GameService } from 'src/app/player-game-selection/game.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-table-game-player',
   templateUrl: './table-game-player.component.html',
   styleUrls: ['./table-game-player.component.scss']
@@ -19,7 +20,7 @@ export class TableGamePlayerComponent implements OnInit {
     private gameS: GameService,
     private pointsService: InputOutputPointsService,
     public changeDetectorRef: ChangeDetectorRef,
-    public formBuilder: FormBuilder
+    public formBuilder: FormBuilder,
   ) {
     this.pointsForm = this.formBuilder.group({
       dart1: [null, Validators.required],
@@ -69,6 +70,7 @@ export class TableGamePlayerComponent implements OnInit {
       (<HTMLInputElement>document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('text')[2]).value = '';
       this.pointsService.outputPointsForAnotherPlayer();
       this.pointsService.result();
+      this.changeDetectorRef.detectChanges();
     }
 
   }

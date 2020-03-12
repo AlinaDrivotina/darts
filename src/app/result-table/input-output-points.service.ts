@@ -54,12 +54,13 @@ export class InputOutputPointsService {
 
   }
 
-  array: any [] = [];
   result() {
 
-    this.array.push(this.res1, this.res2);
+    let array: any [] = [];
 
-    this.points.push(this.array);
+    array.push(String(this.res1), String(this.res2));
+
+    this.points.unshift(array);
     
   }
 
@@ -67,35 +68,12 @@ export class InputOutputPointsService {
     return this.points;
   }
 
-  // outputPoints() {
-
-  //   let arrayPoints1 = Object.values(this.arr1[this.arr1.length - 1]);
-  //   let arrayPoints2 = Object.values(this.arr2[this.arr2.length - 1]);
-  
-  //   let sumArr1 = arrayPoints1
-  //   .map((item: string) => parseInt(item))
-  //   .reduce( (sum: number, current: number) => {
-  //     return (sum + current);
-  //   });
-
-  //   this.res1 -= sumArr1;
-
-  //   let sumArr2 = arrayPoints2
-  //   .map((item: string) => parseInt(item))
-  //   .reduce( (sum: number, current: number) => {
-  //     return (sum + current);
-  //   });
-
-  //   if(sumArr2 === sumArr1) {
-  //     sumArr2 = 0;
-  //   }
-
-  //   this.res2 -= sumArr2;
-
-  //   let array: any [] = [];
-  //   array.push(this.res1, this.res2);
-
-  //   return this.points.push(array);
-  // }
+  cleanAll() {
+    this.res1 = 301;
+    this.res2 = 301;
+    this.points = [];
+    this.arr1 = [];
+    this.arr2 = [];
+  }
 
 }

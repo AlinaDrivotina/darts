@@ -35,6 +35,12 @@ export class PlayerService {
   playerNickname() {
     return this.nick;
   }
+
+  cleanPlayers() {
+    this.ind = 0;
+    this.nick = null;
+    this.newArr = [];
+  }
  
 }
 
