@@ -87,12 +87,14 @@
                         text-align: center;
                     }
     
-                    .step2:active, .step3:active {
-                        background-color: rgb(59, 57, 57);
-                        color: white;
-                    }
+                    // .step2:active, .step3:active {
+                    //     background-color: rgb(59, 57, 57);
+                    //     color: white;
+                    // }
 
-                    .step1:active {
+                   
+
+                    .newStep1 {
                         border: 1px solid rgb(59, 57, 57);
                         padding: 3px 3px 0 3px;
                         height: 25px;
@@ -102,15 +104,27 @@
                         color: rgb(59, 57, 57);
                     }
 
-                    // .newStep1 {
-                        // border: 1px solid rgb(59, 57, 57);
-                        // padding: 3px 3px 0 3px;
-                        // height: 25px;
-                        // width: 25px;
-                        // text-align: center;
-                        // background-color: white;
-                        // color: rgb(59, 57, 57);
-                    // }
+                    .newStep2 {
+                        border: 1px solid rgb(59, 57, 57);
+                        padding: 3px 3px 0 3px;
+                        height: 25px;
+                        width: 25px;
+                        text-align: center;
+                        background-color: rgb(59, 57, 57);
+                        color: white;
+                    }
+
+                    .newStep3 {
+                        border: 1px solid rgb(59, 57, 57);
+                        padding: 3px 3px 0 3px;
+                        height: 25px;
+                        border-radius: 0 10px 10px 0;
+                        width: 25px;
+                        text-align: center;
+                        margin-right: -2px;
+                        background-color: rgb(59, 57, 57);
+                        color: white;
+                    }
                     // при активации полей менялся их стиль
         
                     .step3 {

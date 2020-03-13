@@ -33,17 +33,14 @@ export class PlayersComponent implements OnInit {
 
   searching() {
     let searchingPlayer = (<HTMLInputElement>document.getElementById('search')).value;
-    // let arr = this.playerS.getNewPlayer();
+    let arr = this.playerS.getNewPlayer();
 
-    return this.playerS.getNewPlayer().filter(el => el.nickname === searchingPlayer);
-    
+    arr = this.playerS.getNewPlayer().filter(el => {
+      if(el.nickname === searchingPlayer) {
+        document.getElementsByClassName('user')[this.playerS.getNewPlayer().indexOf(el)].classList.toggle('search');
+      }
+    });
 
-    // for (let i = 0; i < arr.length; i++) {
-    //   if (i === index) {
-    //     return arr[index].nickname;
-    //   }
-    // }
-    // alert(element);
   }
   
 }

@@ -1,10 +1,18 @@
 <form class="containerRes"> 
     <div class="titleOfTable">
-        <div>{{ first }}</div>
-        <div>{{ second }}</div>
+        <div>{{ first }}
+            <span *ngIf="pointsService.final().length != 0"> 
+                <span id="win1" *ngIf="pointsService.final()[0][0] === '0'">&#9786;</span>
+            </span>
+        </div>
+        <div>{{ second }}
+            <span  *ngIf="pointsService.final().length != 0">
+                <span id="win2" *ngIf="pointsService.final()[0][1] === '0'">&#9786;</span>
+            </span>
+        </div>
     </div>
-    <div class="pointsTable" *ngFor="let points of pointsService.final(); let i = index"> <!--Здесь директива ngFor с массивом передаваемых очков   *ngFor="let points from pointsService.final(), let i = index"  -->
-        <div class="num">{{ i + 1 }}</div> <!-- Здесь должна быть переменная, которая инкрементируется  {{ i }}   {{ points[i][0] }}  {{ points[i][1] }} --> 
+    <div class="pointsTable" *ngFor="let points of pointsService.final(); let i = index"> 
+        <div class="num">{{ i + 1 }}</div> <!-- разобраться с индексом --> 
         <div class="pointsOfPlayer">
             <div>{{ points[0] }}</div>
             <div>{{ points[1] }}</div>

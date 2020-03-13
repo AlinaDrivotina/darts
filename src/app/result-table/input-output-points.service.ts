@@ -34,6 +34,10 @@ export class InputOutputPointsService {
 
     this.res1 -= sumArr1;
 
+    if (this.res1 < 0) {
+      this.res1 += sumArr1;
+    }
+
   }
 
   outputPointsForAnotherPlayer() {
@@ -50,8 +54,18 @@ export class InputOutputPointsService {
 
     if (this.res2 === this.res1) {
       this.res2 += sumArr2;
+    } else if (this.res2 < 0) {
+      this.res2 += sumArr2;
     }
 
+  }
+
+  resres1() {
+    return String(this.res1);
+  }
+
+  resres2() {
+    return String(this.res2);
   }
 
   result() {

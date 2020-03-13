@@ -24,4 +24,5 @@ export class PointsResultTableComponent implements OnInit {
   
   }
 
+
 }
