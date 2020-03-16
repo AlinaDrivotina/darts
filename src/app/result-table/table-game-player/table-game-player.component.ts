@@ -14,7 +14,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class TableGamePlayerComponent implements OnInit {
 
   pointsForm: FormGroup;
-
   firstSubmit1: boolean = true;
   secondSubmit1: boolean = true;
   thirdSubmit1: boolean = true;
@@ -59,7 +58,7 @@ export class TableGamePlayerComponent implements OnInit {
     if (game === '301' && length === 2) {
       return;
     }
-    this.router.navigate(['/selection']); // куда должна вести эта кнопка ?? второстепенный вопрос
+    this.router.navigate(['/selection']); 
   }
 
   submitPoints(e) {
@@ -68,32 +67,36 @@ export class TableGamePlayerComponent implements OnInit {
     if (e.target === document.getElementsByClassName('submitPoints')[0]) {
       this.pointsService.inputPointsForPlayer(this.pointsForm.value);
 
-      (<HTMLInputElement>document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('text')[0]).value = '';
-      (<HTMLInputElement>document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('text')[1]).value = '';
-      (<HTMLInputElement>document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('text')[2]).value = '';
+      (document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('text')[0] as HTMLInputElement).value = '';
+      (document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('text')[1] as HTMLInputElement).value = '';
+      (document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('text')[2] as HTMLInputElement).value = '';
 
       if (this.firstSubmit1 === true) {
-        document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step1')[0].classList.toggle('newStep1');
-        document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step1')[1].classList.toggle('newStep1');
-        document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step1')[2].classList.toggle('newStep1');
+        document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step1')[0].classList.toggle('newStep1', true);
+        document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step1')[1].classList.toggle('newStep1', true);
+        document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step1')[2].classList.toggle('newStep1', true);
   
-        document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step2')[0].classList.toggle('newStep2');
-        document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step2')[1].classList.toggle('newStep2');
-        document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step2')[2].classList.toggle('newStep2');
+        document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step2')[0].classList.toggle('newStep2', true);
+        document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step2')[1].classList.toggle('newStep2', true);
+        document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step2')[2].classList.toggle('newStep2', true);
 
         this.firstSubmit1 = false;
-        this.secondSubmit1 = true;
+        if (this.secondSubmit1 === false) {
+          this.secondSubmit1 = true;
+        }
       } else if (this.secondSubmit1 === true) {
         document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step2 newStep2')[0].classList.toggle('newStep2', false);
         document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step2 newStep2')[1].classList.toggle('newStep2', false);
         document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step2 newStep2')[2].classList.toggle('newStep2', false)
 
-        document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step3')[0].classList.toggle('newStep3');
-        document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step3')[1].classList.toggle('newStep3');
-        document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step3')[2].classList.toggle('newStep3');
+        document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step3')[0].classList.toggle('newStep3', true);
+        document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step3')[1].classList.toggle('newStep3', true);
+        document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step3')[2].classList.toggle('newStep3', true);
 
         this.secondSubmit1 = false;
-        this.thirdSubmit1 = true;
+        if (this.thirdSubmit1 === false) {
+          this.thirdSubmit1 = true;
+        }
       } else if (this.thirdSubmit1 === true) {
         document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step3 newStep3')[0].classList.toggle('newStep3', false);
         document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step3 newStep3')[1].classList.toggle('newStep3', false);
@@ -104,28 +107,31 @@ export class TableGamePlayerComponent implements OnInit {
         document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('step1 newStep1')[2].classList.toggle('newStep1', false);
 
         this.thirdSubmit1 = false;
-        this.firstSubmit1 = true;
+        if (this.firstSubmit1 === false) {
+          this.firstSubmit1 = true;
+        }
       }
 
       this.pointsService.outputPointsForPlayer();
     } else if ( e.target === document.getElementsByClassName('submitPoints')[1] ) {
         this.pointsService.inputPountsForAnotherOlayer(this.pointsForm.value);
-        (<HTMLInputElement>document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('text')[0]).value = '';
-        (<HTMLInputElement>document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('text')[1]).value = '';
-        (<HTMLInputElement>document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('text')[2]).value = '';
 
-        if (this.firstSubmit2 === true) {
-          document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('step1')[0].classList.toggle('newStep1');
-          document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('step1')[1].classList.toggle('newStep1');
-          document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('step1')[2].classList.toggle('newStep1');
+        (document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('text')[0] as HTMLInputElement).value = '';
+        (document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('text')[1] as HTMLInputElement).value = '';
+        (document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('text')[2] as HTMLInputElement).value = '';
+
+        // if (this.firstSubmit2 === true) {
+        //   document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('step1')[0].classList.toggle('newStep1');
+        //   document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('step1')[1].classList.toggle('newStep1');
+        //   document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('step1')[2].classList.toggle('newStep1');
     
-          document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('step2')[0].classList.toggle('newStep2');
-          document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('step2')[1].classList.toggle('newStep2');
-          document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('step2')[2].classList.toggle('newStep2');
+        //   document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('step2')[0].classList.toggle('newStep2');
+        //   document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('step2')[1].classList.toggle('newStep2');
+        //   document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('step2')[2].classList.toggle('newStep2');
 
-          this.firstSubmit2 = false;
-          this.secondSubmit2 = true;
-        }
+        //   this.firstSubmit2 = false;
+        //   this.secondSubmit2 = true;
+        // }
 
         this.pointsService.outputPointsForAnotherPlayer();
         this.pointsService.result();

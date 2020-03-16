@@ -75,7 +75,7 @@ export class InputOutputPointsService {
     array.push(String(this.res1), String(this.res2));
 
     this.points.unshift(array);
-    
+
   }
 
   final() {

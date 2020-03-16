@@ -30,6 +30,17 @@ export class StartButtonComponent implements OnInit {
     } else if (game === undefined && player != undefined) {
       return;
     }
+
+    if (game === '501' && player != undefined) {
+      // path game 501
+    } else if (game === undefined && player === undefined) {
+      return;
+    } else if (game  === '501' && player === undefined) {
+      return;
+    } else if (game === undefined && player != undefined) {
+      return;
+    }
+
     
   } 
 }
