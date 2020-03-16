@@ -18,20 +18,22 @@ export class PlayersComponent implements OnInit {
 
   }
 
-  newPlayer() {
+  public newPlayer() {
     this.router.navigate(['/new-player']);
   }
 
-  deleteUser(i) {
+  public deleteUser(i) {
     let arrayOfPlayers = this.playerS.getNewPlayer();
     arrayOfPlayers.splice(i, 1);
   }
 
-  userSelected(i) {
+  public userSelected(i) {
     let selectedPl = this.playerS.selectedPlayer(i);
+    let arrayOfSelectedPlayers = document.getElementsByClassName('user');
+    arrayOfSelectedPlayers[i].classList.toggle('selected');
   }
 
-  searching() {
+  public searching() {
     let searchingPlayer = (<HTMLInputElement>document.getElementById('search')).value;
     let arr = this.playerS.getNewPlayer();
 

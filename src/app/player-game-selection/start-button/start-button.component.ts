@@ -18,7 +18,7 @@ export class StartButtonComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  startGame() {
+  public startGame() {
     let game = this.gameS.getGame();
     let player = this.playerS.playerNickname();
     if (game === '301' && player != undefined) {

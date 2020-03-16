@@ -17,7 +17,7 @@ export class LogoLogoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  startNewGame() {
+  public startNewGame() {
     this.pointsService.cleanAll();
     this.playerS.cleanPlayers();
     this.router.navigate(['/selection']); // зачистка страницы с игрой 

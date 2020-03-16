@@ -14,29 +14,29 @@ export class PlayerService {
     
   }
 
-  addNewPlayer(a: any) {
+  public addNewPlayer(a: any) {
     this.arr.push(a);
   }
 
-  getNewPlayer() {
+  public getNewPlayer() {
     return this.arr;
   }
   
-  selectedPlayer(i: number) {
+  public selectedPlayer(i: number) {
     this.ind = i;
     this.nick = this.arr[i].nickname;
     return this.newArr.push(this.arr[i])
   }
 
-  pushingPlayer() {
+  public pushingPlayer() {
     return this.newArr;
   }
 
-  playerNickname() {
+  public playerNickname() {
     return this.nick;
   }
 
-  cleanPlayers() {
+  public cleanPlayers() {
     this.ind = 0;
     this.nick = null;
     this.newArr = [];

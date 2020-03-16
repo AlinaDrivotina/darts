@@ -5,24 +5,24 @@ import { Injectable } from '@angular/core';
 })
 export class InputOutputPointsService {
 
-  res1 = 301;
-  res2 = 301;
-  points: any [] = []
+  public res1 = 301;
+  public res2 = 301;
+  public points: any [] = []
 
-  arr1: any [] = [];
-  arr2: any [] = [];
+  public arr1: any [] = [];
+  public arr2: any [] = [];
 
   constructor() { }
 
-  inputPointsForPlayer(a: any) {
+  public inputPointsForPlayer(a: any) {
     this.arr1.push(a);
   }
 
-  inputPountsForAnotherOlayer(a: any) {
+  public inputPountsForAnotherOlayer(a: any) {
     this.arr2.push(a);
   }
 
-  outputPointsForPlayer() {
+  public outputPointsForPlayer() {
 
     let arrayPoints1 = Object.values(this.arr1[this.arr1.length - 1]);
 
@@ -40,7 +40,7 @@ export class InputOutputPointsService {
 
   }
 
-  outputPointsForAnotherPlayer() {
+  public outputPointsForAnotherPlayer() {
 
     let arrayPoints2 = Object.values(this.arr2[this.arr2.length - 1]);
 
@@ -60,15 +60,15 @@ export class InputOutputPointsService {
 
   }
 
-  resres1() {
+  public resres1() {
     return String(this.res1);
   }
 
-  resres2() {
+  public resres2() {
     return String(this.res2);
   }
 
-  result() {
+  public result() {
 
     let array: any [] = [];
 
@@ -78,11 +78,11 @@ export class InputOutputPointsService {
 
   }
 
-  final() {
+  public final() {
     return this.points;
   }
 
-  cleanAll() {
+  public cleanAll() {
     this.res1 = 301;
     this.res2 = 301;
     this.points = [];

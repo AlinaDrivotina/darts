@@ -13,7 +13,7 @@ export class GameComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  gameSelection(e) {
+  public gameSelection(e) {
     let el = e.target;
     let btn1 = document.getElementsByClassName('g1')[0];
     let btn2 = document.getElementsByClassName('g2')[0];

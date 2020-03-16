@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 
 export class FormComponent implements OnInit {
 
-  playerForm: FormGroup;
+  public playerForm: FormGroup;
 
   constructor(
     public formBuilder: FormBuilder,
@@ -34,7 +34,7 @@ export class FormComponent implements OnInit {
     });
   }
 
-  addingNewUser() {
+  public addingNewUser() {
     if (this.playerForm.invalid) { return; }
     this.playerS.addNewPlayer(this.playerForm.value);
     this.router.navigate(['/selection']);

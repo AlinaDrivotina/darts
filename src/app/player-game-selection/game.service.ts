@@ -4,14 +4,15 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class GameService {
-  game: string = '';
+  public game: string = '';
 
-  chooseGame(numberGame: any) {
+  constructor() { }
+
+  public chooseGame(numberGame: any) {
     this.game = numberGame;
   }
 
-  getGame() {
+  public getGame() {
     return this.game;
   }
-  constructor() { }
 }
