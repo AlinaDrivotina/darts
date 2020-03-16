@@ -18,6 +18,10 @@ import { ResultTableComponent } from './result-table/result-table.component';
 import { LogoLogoComponent } from './result-table/logo-logo/logo-logo.component';
 import { TableGamePlayerComponent } from './result-table/table-game-player/table-game-player.component';
 import { PointsResultTableComponent } from './result-table/points-result-table/points-result-table.component';
+import { Game501resComponent } from './game501res/game501res.component';
+import { LogoLogComponent } from './game501res/logo-log/logo-log.component';
+import { PointsInputsComponent } from './game501res/points-inputs/points-inputs.component';
+import { PointsRes501TableComponent } from './game501res/points-res501-table/points-res501-table.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { PointsResultTableComponent } from './result-table/points-result-table/p
     ResultTableComponent,
     LogoLogoComponent,
     TableGamePlayerComponent,
-    PointsResultTableComponent
+    PointsResultTableComponent,
+    Game501resComponent,
+    LogoLogComponent,
+    PointsInputsComponent,
+    PointsRes501TableComponent
   ],
   imports: [
     BrowserModule,

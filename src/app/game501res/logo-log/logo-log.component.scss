@@ -1,0 +1,54 @@
+.container1 {
+
+    #logo1 {
+        width: 600px;
+        .title1 {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 20px;
+            color: white;
+            width: 130px;
+            height: 50px;
+
+        
+            #countsStyle1 {
+                margin-top: -30px;
+                font-size: 35px;
+            }
+        
+            h5 {
+                font-size: 10px;
+                margin-top: -30px;
+                font-weight: lighter;
+                text-align: right;
+            }
+        }
+    }
+
+    #newGame1 {
+        width: 900px;
+        padding-top: 60px;
+
+        button {
+            width: 250px;
+            height: 40px;
+            border-radius: 5px;
+            border: none;
+            font-size: 17px;
+            background-color: rgb(255, 230, 0);
+            color: rgba(0, 0, 0, 0.801);
+            margin-right: 100px;
+        }
+    }
+
+}
+
+hr {
+    margin-top: 50px;
+    border: none; 
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.5); 
+    height: 1px; 
+}
+
+

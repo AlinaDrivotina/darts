@@ -1,0 +1,32 @@
+<form class="containerRes_"> 
+    <div class="titleOfTable_">
+        <div>{{first}}
+            <span *ngIf="pointsS.final().length != 0"> 
+                <span id="win1_" *ngIf="pointsS.final()[0][0] === '0'">&#9786;</span>
+            </span>
+        </div>
+        <div>{{second}}
+            <span *ngIf="pointsS.final().length != 0"> 
+                <span id="win2_" *ngIf="pointsS.final()[0][1] === '0'">&#9786;</span>
+            </span>
+        </div>
+        <div>{{third}}
+            <span *ngIf="pointsS.final().length != 0"> 
+                <span id="win3_" *ngIf="pointsS.final()[0][2] === '0'">&#9786;</span>
+            </span>
+        </div>
+    </div>
+    <div class="pointsTable_" *ngFor="let points of pointsS.final(); let i = index"> 
+        <div class="num_">{{ pointsS.final().length - i }}</div> 
+        <div class="pointsOfPlayer_">
+            <div>{{ points[0] }}</div>
+            <div>{{ points[1] }}</div>
+            <div>{{ points[2] }}</div>
+        </div>
+    </div>
+    <div class="startPoints_">
+        <div>501</div>
+        <div>501</div>
+        <div>501</div>
+    </div>
+</form>

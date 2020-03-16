@@ -32,7 +32,7 @@ export class StartButtonComponent implements OnInit {
     }
 
     if (game === '501' && player != undefined) {
-      // path game 501
+      this.router.navigate(['/game-501']);
     } else if (game === undefined && player === undefined) {
       return;
     } else if (game  === '501' && player === undefined) {
@@ -41,6 +41,5 @@ export class StartButtonComponent implements OnInit {
       return;
     }
 
-    
   } 
 }

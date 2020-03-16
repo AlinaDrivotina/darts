@@ -1,0 +1,43 @@
+<form id="gameSteps_">
+    <form [formGroup]="pointsForm" class="gamePointsForPlayer_" *ngFor="let player of playerS.pushingPlayer()"> 
+       <div class="plrnm_">{{ player.nickname }}</div>
+       <div class="dart_">Dart 1
+         <div class="fordart_">
+             <div>
+               <input class="text_" type="text" name="dart1" formControlName="dart1" >
+             </div>
+             <div class="points_">
+               <div class="step1_">1x</div>
+               <div class="step2_">2x</div>
+               <div class="step3_">3x</div>
+           </div>
+         </div>
+       </div> 
+       <div class="dart_">Dart 2
+         <div class="fordart_">
+             <div>
+               <input class="text_" type="text" name="dart2" formControlName="dart2">
+             </div>
+             <div class="points_">
+               <div class="step1_">1x</div>
+               <div class="step2_">2x</div>
+               <div class="step3_">3x</div>
+             </div>
+         </div>
+       </div>
+       <div class="dart_">Dart 3
+         <div class="fordart_">
+             <div><input class="text_" type="text" name="dart3" formControlName="dart3">
+             </div>
+             <div class="points_">
+               <div class="step1_">1x</div>
+               <div class="step2_">2x</div>
+               <div class="step3_">3x</div>
+             </div>
+         </div>
+       </div>
+       <button class="submitPoints_" (click)="submitPoints($event)">Submit points</button>
+     </form>
+     <button id="btnAdd_" (click)="addAnotherPlayer()">Add opponent</button>
+   </form>
+ <hr>

@@ -64,7 +64,7 @@ export class TableGamePlayerComponent implements OnInit {
   public submitPoints(e) {
     if (this.pointsForm.invalid) { return; }
 
-    if (e.target === document.getElementsByClassName('submitPoints')[0]) {
+    if (e.target === document.getElementsByClassName('submitPoints')[0]) { 
       this.pointsService.inputPointsForPlayer(this.pointsForm.value);
 
       (document.getElementsByClassName('gamePointsForPlayer')[0].getElementsByClassName('text')[0] as HTMLInputElement).value = '';
@@ -114,7 +114,7 @@ export class TableGamePlayerComponent implements OnInit {
 
       this.pointsService.outputPointsForPlayer();
     } else if ( e.target === document.getElementsByClassName('submitPoints')[1] ) {
-        this.pointsService.inputPountsForAnotherOlayer(this.pointsForm.value);
+        this.pointsService.inputPointsForAnotherOlayer(this.pointsForm.value);
 
         (document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('text')[0] as HTMLInputElement).value = '';
         (document.getElementsByClassName('gamePointsForPlayer')[1].getElementsByClassName('text')[1] as HTMLInputElement).value = '';

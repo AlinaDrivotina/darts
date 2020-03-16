@@ -8,8 +8,8 @@ import { InputOutputPointsService } from '../input-output-points.service';
   styleUrls: ['./points-result-table.component.scss']
 })
 export class PointsResultTableComponent implements OnInit {
-  first: string;
-  second: string;
+  public first: string;
+  public second: string;
 
   constructor(public playerS : PlayerService,
     public pointsService: InputOutputPointsService,
