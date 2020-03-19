@@ -13,7 +13,7 @@
             color: white;
         }
 
-        #win1_, #win2_, #win3_ {
+        .win {
             color: rgb(255, 230, 0);
         }
     }
@@ -27,12 +27,14 @@
 
         .num_ {
             color: white;
+            width: 20px;
+            text-align: right;
         }
         
         .pointsOfPlayer_ {
             background-color: white;
             width: 1000px;
-            margin-left: 15px;
+            margin-left: 4px;
             height: 40px;
             line-height: 40px;
             color: black;
@@ -56,8 +58,7 @@
             display: inline-block;
             width: 333px;
             text-align: center;
-            color: rgba(0, 0, 0, 0.514);
-            
+            color: rgba(0, 0, 0, 0.514); 
         }
     }
 }

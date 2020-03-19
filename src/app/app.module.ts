@@ -24,32 +24,32 @@ import { PointsInputsComponent } from './game501res/points-inputs/points-inputs.
 import { PointsRes501TableComponent } from './game501res/points-res501-table/points-res501-table.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TitleComponent,
-    FormComponent,
-    FirstPageComponent,
-    PlayerGameSelectionComponent,
-    LogoComponent,
-    PlayersComponent,
-    GameComponent,
-    StartButtonComponent,
-    ResultTableComponent,
-    LogoLogoComponent,
-    TableGamePlayerComponent,
-    PointsResultTableComponent,
-    Game501resComponent,
-    LogoLogComponent,
-    PointsInputsComponent,
-    PointsRes501TableComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  providers: [PlayerService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        TitleComponent,
+        FormComponent,
+        FirstPageComponent,
+        PlayerGameSelectionComponent,
+        LogoComponent,
+        PlayersComponent,
+        GameComponent,
+        StartButtonComponent,
+        ResultTableComponent,
+        LogoLogoComponent,
+        TableGamePlayerComponent,
+        PointsResultTableComponent,
+        Game501resComponent,
+        LogoLogComponent,
+        PointsInputsComponent,
+        PointsRes501TableComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
+    providers: [PlayerService],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,26 +3,21 @@ import { PlayerService } from 'src/app/first-page/player.service';
 import { InputOutputPointsService } from '../input-output-points.service';
 
 @Component({
-  selector: 'app-points-result-table',
-  templateUrl: './points-result-table.component.html',
-  styleUrls: ['./points-result-table.component.scss']
+    selector: 'app-points-result-table',
+    templateUrl: './points-result-table.component.html',
+    styleUrls: ['./points-result-table.component.scss']
 })
 export class PointsResultTableComponent implements OnInit {
-  public first: string;
-  public second: string;
+    public first: string;
+    public second: string;
 
-  constructor(public playerS : PlayerService,
-    public pointsService: InputOutputPointsService,
-    private readonly changeDetectorRef: ChangeDetectorRef,
-  ) { }
+    constructor(public playerS : PlayerService,
+        public pointsService: InputOutputPointsService,
+        private readonly changeDetectorRef: ChangeDetectorRef,
+    ) { }
 
-  ngOnInit(): void {
-
-    this.first = this.playerS.pushingPlayer()[0].nickname;
-
-    this.second = this.playerS.pushingPlayer()[this.playerS.pushingPlayer().length - 1].nickname;
-  
-  }
-
-
+    ngOnInit(): void {
+        this.first = this.playerS.pushingPlayer()[0].nickname;
+        this.second = this.playerS.pushingPlayer()[this.playerS.pushingPlayer().length - 1].nickname;
+    }
 }

@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class GameService {
-  public game: string = '';
+    public game: string = '';
 
-  constructor() { }
+    constructor() { 
+    }
 
-  public chooseGame(numberGame: any) {
-    this.game = numberGame;
-  }
+    public chooseGame(numberGame: any) {
+        this.game = numberGame;
+    }
 
-  public getGame() {
-    return this.game;
-  }
+    public getGame() {
+        return this.game;
+    }
 }

@@ -2,18 +2,31 @@
     <div class="titleOfTable_">
         <div>{{first}}
             <span *ngIf="pointsS.final().length != 0"> 
-                <span id="win1_" *ngIf="pointsS.final()[0][0] === '0'">&#9786;</span>
+                <span class="win" *ngIf="(pointsS.final()[0][0] === minimum && pointsS.final().length === 20) || pointsS.final()[0][0] === '0';else unset">&#9786;</span>
+                <ng-template #unset>  
+                    <span class="win" *ngIf="(pointsS.final()[0][0] === pointsS.final()[0][1] && pointsS.final()[0][1] === pointsS.final()[0][2])">
+                        <span *ngIf="(pointsS.final()[0][0] === minimum && pointsS.final().length === 30) || pointsS.final()[0][0] === '0'">&#9786;</span>
+                    </span>
+                  </ng-template>  
             </span>
         </div>
         <div>{{second}}
             <span *ngIf="pointsS.final().length != 0"> 
-                <span id="win2_" *ngIf="pointsS.final()[0][1] === '0'">&#9786;</span>
+                <span class="win" *ngIf="(pointsS.final()[0][1] === minimum && pointsS.final().length === 20) || pointsS.final()[0][1] === '0'; else another">&#9786;</span>
+                <ng-template #another>
+                    <span class="win" *ngIf="(pointsS.final()[0][0] === pointsS.final()[0][1] && pointsS.final()[0][1] === pointsS.final()[0][2])">
+                        <span *ngIf="(pointsS.final()[0][1] === minimum && pointsS.final().length === 30) || pointsS.final()[0][1] === '0'">&#9786;</span>
+                    </span>
+                </ng-template>
             </span>
         </div>
         <div>{{third}}
-            <span *ngIf="pointsS.final().length != 0"> 
-                <span id="win3_" *ngIf="pointsS.final()[0][2] === '0'">&#9786;</span>
-            </span>
+            <span class="win" *ngIf="(pointsS.final()[0][2] === minimum && pointsS.final().length === 20) || pointsS.final()[0][2] === '0'; else another">&#9786;</span>
+                <ng-template #another>
+                    <span class="win" *ngIf="(pointsS.final()[0][0] === pointsS.final()[0][1] && pointsS.final()[0][1] === pointsS.final()[0][2])">
+                        <span *ngIf="(pointsS.final()[0][2] === minimum && pointsS.final().length === 30) || pointsS.final()[0][2] === '0'">&#9786;</span>
+                    </span>
+                </ng-template>
         </div>
     </div>
     <div class="pointsTable_" *ngFor="let points of pointsS.final(); let i = index"> 
