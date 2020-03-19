@@ -7,14 +7,15 @@ import { Game501resComponent } from './game501res/game501res.component';
 
 
 const routes: Routes = [
-  {path: 'new-player', component: FirstPageComponent},
-  {path: 'selection', component: PlayerGameSelectionComponent},
-  {path: 'game-301', component: ResultTableComponent},
-  {path: 'game-501', component: Game501resComponent}
+    { path: '', redirectTo: 'new-player', pathMatch: 'full' },
+    { path: 'new-player', component: FirstPageComponent },
+    { path: 'selection', component: PlayerGameSelectionComponent },
+    { path: 'game-301', component: ResultTableComponent },
+    { path: 'game-501', component: Game501resComponent} 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }
