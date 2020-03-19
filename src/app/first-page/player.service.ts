@@ -10,16 +10,19 @@ export class PlayerService {
     ind: number = 0;
     newArr: any[] = [];
 
-    constructor() { 
-        
-    }
-
     public addNewPlayer(a: any) {
         this.arr.push(a);
     }
 
-    public getNewPlayer() {
-        return this.arr;
+    public getNewPlayer(filterValue: string) {
+        this.arr.filter(el => {
+          if (el.nickname === filterValue) {
+            return this.arr.indexOf(el);
+          }
+        });
+        if (filterValue === undefined || filterValue === '') {
+            return this.arr;
+        }
     }
     
     public selectedPlayer(i: number) {

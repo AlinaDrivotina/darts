@@ -1,3 +1,3 @@
 <div class="btn">
-    <button id="start" (click)="startGame()">Start</button>
+    <button *ngIf="gameS.getGame() && playerS.playerNickname()" id="start" (click)="startGame()">Start</button>
 </div>

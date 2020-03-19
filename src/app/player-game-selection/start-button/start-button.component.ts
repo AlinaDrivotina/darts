@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class StartButtonComponent implements OnInit {
 
-    constructor(private gameS: GameService,
+    constructor(public gameS: GameService,
         public playerS: PlayerService,
         private router: Router
         ) { }

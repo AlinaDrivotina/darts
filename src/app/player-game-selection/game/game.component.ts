@@ -8,9 +8,12 @@ import { GameService } from '../game.service';
 })
 export class GameComponent implements OnInit {
 
+	public firstClick: boolean; 
+
 	constructor(private gameS: GameService) { }
 
 	ngOnInit(): void {
+		this.firstClick = true;
 	}
 
 	public gameSelection(e: any) {

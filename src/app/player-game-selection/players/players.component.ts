@@ -9,13 +9,15 @@ import { PlayerService } from 'src/app/first-page/player.service';
 })
 export class PlayersComponent implements OnInit {
 
+    public searchingPlayer: string;
+
     constructor(private router: Router,
         public playerS: PlayerService,
     ) { }
 
     
     ngOnInit(): void {
-
+        this.searchingPlayer = (document.getElementById('search') as HTMLInputElement).value; 
     }
 
     public newPlayer() {
@@ -23,7 +25,7 @@ export class PlayersComponent implements OnInit {
     }
 
     public deleteUser(i: number) {
-        let arrayOfPlayers = this.playerS.getNewPlayer();
+        let arrayOfPlayers = this.playerS.getNewPlayer(this.searchingPlayer);
         arrayOfPlayers.splice(i, 1);
     }
 
@@ -34,15 +36,19 @@ export class PlayersComponent implements OnInit {
     }
 
     public searching() {
-        let searchingPlayer = (<HTMLInputElement>document.getElementById('search')).value;
-        let arr = this.playerS.getNewPlayer();
-
-        arr = this.playerS.getNewPlayer().filter(el => {
-            if(el.nickname === searchingPlayer) {
-                document.getElementsByClassName('user')[this.playerS.getNewPlayer().indexOf(el)].classList.toggle('search');
-            }
-        });
+        this.playerS.getNewPlayer(this.searchingPlayer);
     }
+
+    // public searching() {
+    //     let searchingPlayer = (<HTMLInputElement>document.getElementById('search')).value;
+    //     let arr = this.playerS.getNewPlayer();
+
+    //     arr = this.playerS.getNewPlayer().filter(el => {
+    //         if(el.nickname === searchingPlayer) {
+    //             document.getElementsByClassName('user')[this.playerS.getNewPlayer().indexOf(el)].classList.toggle('search');
+    //         }
+    //     });
+    // }
   
 }
 
