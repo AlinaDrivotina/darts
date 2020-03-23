@@ -1,11 +1,11 @@
 <form class="form">
     <div class="head">
-        <input id="search" type="search" placeholder="Search" (keypress)="searching()">
-        <button id="searchBtn" type="submit">&#128269;</button>
+        <input id="search" type="search" placeholder="Search">
+        <button id="searchBtn" type="submit" (click)="searching()">&#128269;</button>
         <button id="newPlayer" (click)="newPlayer()">New player</button>
     </div>
     <div id="players">
-        <div class="user" *ngFor="let player of playerS.getNewPlayer(searchingPlayer); let i = index" (click)="userSelected(i)">
+        <div class="user" *ngFor="let player of playerS.getNewPlayer(this.filter); let i = index" (click)="userSelected(i)">
             <div>{{ player.nickname }}</div>
             <div>{{ player.email }}</div>
             <div 

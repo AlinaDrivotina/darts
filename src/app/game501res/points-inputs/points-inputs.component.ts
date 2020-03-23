@@ -70,6 +70,7 @@ export class PointsInputsComponent implements OnInit {
         if (game === '501' && length === 3) {
         return;
         }
+        this.playerS.counter = 1;
         this.router.navigate(['/selection']); 
     }
 

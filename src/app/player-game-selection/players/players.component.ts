@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PlayerService } from 'src/app/first-page/player.service';
+import { GameService } from '../game.service';
 
 @Component({
     selector: 'app-players',
@@ -10,14 +11,17 @@ import { PlayerService } from 'src/app/first-page/player.service';
 export class PlayersComponent implements OnInit {
 
     public searchingPlayer: string;
+    public ind: number;
+    public filter: any;
 
     constructor(private router: Router,
         public playerS: PlayerService,
+        public gameS: GameService
     ) { }
 
     
     ngOnInit(): void {
-        this.searchingPlayer = (document.getElementById('search') as HTMLInputElement).value; 
+        this.filter = null;
     }
 
     public newPlayer() {
@@ -25,18 +29,24 @@ export class PlayersComponent implements OnInit {
     }
 
     public deleteUser(i: number) {
-        let arrayOfPlayers = this.playerS.getNewPlayer(this.searchingPlayer);
+        let arrayOfPlayers = this.playerS.getNewPlayer(this.filter);
         arrayOfPlayers.splice(i, 1);
     }
 
     public userSelected(i: number) {
-        this.playerS.selectedPlayer(i);
         let arrayOfSelectedPlayers = document.getElementsByClassName('user');
-        arrayOfSelectedPlayers[i].classList.toggle('selected');
+        this.playerS.selectedPlayer(i);
+        if (this.ind !== i && this.ind !== undefined) {
+            arrayOfSelectedPlayers[this.ind].classList.toggle('selected', false);
+            arrayOfSelectedPlayers[i].classList.toggle('selected', true);
+        } 
+        arrayOfSelectedPlayers[i].classList.toggle('selected', true);
+        this.ind = i;
     }
 
     public searching() {
-        this.playerS.getNewPlayer(this.searchingPlayer);
+        this.filter = (<HTMLInputElement>document.getElementById('search')).value;
+        this.playerS.getNewPlayer(this.filter);
     }
 
     // public searching() {

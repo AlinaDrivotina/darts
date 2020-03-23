@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class GameService {
     public game: string = '';
-
+    public flag: boolean = false;
     constructor() { 
     }
 
@@ -16,4 +16,5 @@ export class GameService {
     public getGame() {
         return this.game;
     }
+
 }

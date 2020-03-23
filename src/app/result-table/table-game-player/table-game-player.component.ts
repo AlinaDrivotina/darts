@@ -64,6 +64,7 @@ export class TableGamePlayerComponent implements OnInit {
         if (game === '301' && length === 2) {
             return;
         }
+        this.playerS.counter = 1;
         this.router.navigate(['/selection']); 
     }
 

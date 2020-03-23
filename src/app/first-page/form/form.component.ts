@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { FormGroup, Validators, FormBuilder} from '@angular/forms';
+import { FormGroup, Validators, FormBuilder, FormControl, ValidationErrors} from '@angular/forms';
 import { PlayerService } from '../player.service';
 import { Router } from '@angular/router';
 
@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class FormComponent implements OnInit {
 
     public playerForm: FormGroup;
+    public filter: any;
 
     constructor(
         public formBuilder: FormBuilder,
@@ -23,22 +24,41 @@ export class FormComponent implements OnInit {
         nickname: ["Player", [
             Validators.required,
             Validators.maxLength(20),
-            Validators.pattern("^[a-zA-Z]+$")
-            ] 
+            Validators.pattern("^[a-zA-Z]+$")] 
         ],
         email: [null, Validators.email]
         });
     }
 
+    ngOnInit(): void {
+        this.filter = null;
+    }
+
     public addingNewUser() {
         if (this.playerForm.invalid) { return; }
+        let arr = this.playerS.getNewPlayer(this.filter);
+        if (arr.length > 0 && this.playerForm.value.nickname === arr[arr.length - 1].nickname) {
+            alert('This nickname was reserved by another player');
+            return;
+        }
         this.playerS.addNewPlayer(this.playerForm.value);
         this.router.navigate(['/selection']);
     }
 
-    ngOnInit(): void {
+    // private nicknameValidator(control: FormControl): ValidationErrors {
+    //     const value = control.value;
+    //     if (this.playerS.getNewPlayer().length > 0) {
+    //         let players = this.playerS.getNewPlayer();
+    //         if (players[players.length - 1].nickname === value) {
+    //             players.splice(players.length - 1, 1);
+    //             return { invalidNickname: 'This nickname was reserved by another player'};
+    //         }       
+    //         return null;
+    //     }
+    // }
 
-    }
+
+ 
 
     get nickname() { 
         return this.playerForm.get('nickname'); 

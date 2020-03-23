@@ -15,13 +15,11 @@ export class StartButtonComponent implements OnInit {
         private router: Router
         ) { }
 
-    ngOnInit(): void {
-    }
+    ngOnInit(): void {}
 
     public startGame() {
         let game = this.gameS.getGame();
         let player = this.playerS.playerNickname();
-
         if (player) {
             if (game === '301') {
                 this.router.navigate(['/game-301'])
