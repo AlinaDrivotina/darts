@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TitleComponent implements OnInit {
 
-    constructor() { }
-
     ngOnInit(): void {
     }
 

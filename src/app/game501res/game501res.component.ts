@@ -6,9 +6,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./game501res.component.scss']
 })
 export class Game501resComponent implements OnInit {
-
-    constructor() { }
-
+    
     ngOnInit(): void {
     }
 

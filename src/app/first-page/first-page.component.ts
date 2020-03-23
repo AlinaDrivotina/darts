@@ -8,8 +8,6 @@ import { Router, NavigationStart } from '@angular/router';
 })
 export class FirstPageComponent implements OnInit {
 
-    constructor() { }
-
     ngOnInit(): void {
     }
 

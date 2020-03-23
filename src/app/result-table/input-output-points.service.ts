@@ -12,8 +12,6 @@ export class InputOutputPointsService {
     public arr1: any [] = [];
     public arr2: any [] = [];
 
-    constructor() { }
-
     public inputPointsForPlayer(a: any) {
         this.arr1.push(a);
     }

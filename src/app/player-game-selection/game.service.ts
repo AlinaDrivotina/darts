@@ -5,9 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class GameService {
     public game: string = '';
-    public flag: boolean = false;
-    constructor() { 
-    }
 
     public chooseGame(numberGame: any) {
         this.game = numberGame;

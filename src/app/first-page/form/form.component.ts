@@ -57,9 +57,6 @@ export class FormComponent implements OnInit {
     //     }
     // }
 
-
- 
-
     get nickname() { 
         return this.playerForm.get('nickname'); 
     }

@@ -15,8 +15,6 @@ export class InputOutputP501Service {
     public arr2: any [] = [];
     public arr3: any [] = [];
 
-    constructor() { }
-
     public inputPointsForPlayer1(a: any) {
         this.arr1.push(a);
     }
