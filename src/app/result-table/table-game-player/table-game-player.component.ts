@@ -57,17 +57,6 @@ export class TableGamePlayerComponent implements OnInit {
         return this.pointsForm.get('dart3');
     }
 
-
-    public addAnotherPlayer() {
-        let game = this.gameS.getGame();
-        let length = this.playerS.pushingPlayer().length;
-        if (game === '301' && length === 2) {
-            return;
-        }
-        this.playerS.counter = 1;
-        this.router.navigate(['/selection']); 
-    }
-
     public submitPoints(e: any) {
         if (this.pointsForm.invalid) { return; }
 

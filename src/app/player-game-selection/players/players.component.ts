@@ -36,29 +36,18 @@ export class PlayersComponent implements OnInit {
     public userSelected(i: number) {
         let arrayOfSelectedPlayers = document.getElementsByClassName('user');
         this.playerS.selectedPlayer(i);
-        if (this.ind !== i && this.ind !== undefined) {
-            arrayOfSelectedPlayers[this.ind].classList.toggle('selected', false);
-            arrayOfSelectedPlayers[i].classList.toggle('selected', true);
-        } 
-        arrayOfSelectedPlayers[i].classList.toggle('selected', true);
-        this.ind = i;
+        // if (this.ind !== i && this.ind !== undefined) {
+        //     arrayOfSelectedPlayers[this.ind].classList.toggle('selected', false);
+        //     arrayOfSelectedPlayers[i].classList.toggle('selected', true);
+        // } 
+        arrayOfSelectedPlayers[i].classList.toggle('selected');
+        // this.ind = i;
     }
 
     public searching() {
         this.filter = (<HTMLInputElement>document.getElementById('search')).value;
         this.playerS.getNewPlayer(this.filter);
     }
-
-    // public searching() {
-    //     let searchingPlayer = (<HTMLInputElement>document.getElementById('search')).value;
-    //     let arr = this.playerS.getNewPlayer();
-
-    //     arr = this.playerS.getNewPlayer().filter(el => {
-    //         if(el.nickname === searchingPlayer) {
-    //             document.getElementsByClassName('user')[this.playerS.getNewPlayer().indexOf(el)].classList.toggle('search');
-    //         }
-    //     });
-    // }
   
 }
 

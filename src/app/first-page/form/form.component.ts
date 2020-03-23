@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { FormGroup, Validators, FormBuilder, FormControl, ValidationErrors} from '@angular/forms';
+import { FormGroup, Validators, FormBuilder, FormControl, ValidationErrors, ValidatorFn} from '@angular/forms';
 import { PlayerService } from '../player.service';
 import { Router } from '@angular/router';
 
@@ -13,18 +13,20 @@ export class FormComponent implements OnInit {
 
     public playerForm: FormGroup;
     public filter: any;
+    public arrayOfPlayers: any [];
 
     constructor(
         public formBuilder: FormBuilder,
         public changeDetectorRef: ChangeDetectorRef,
-        private playerS: PlayerService,
+        public playerS: PlayerService,
         private router: Router, 
         ) {
         this.playerForm = this.formBuilder.group({
         nickname: ["Player", [
             Validators.required,
             Validators.maxLength(20),
-            Validators.pattern("^[a-zA-Z]+$")] 
+            Validators.pattern("^[a-zA-Z]+$"),
+            this.nicknameValidator] 
         ],
         email: [null, Validators.email]
         });
@@ -36,26 +38,26 @@ export class FormComponent implements OnInit {
 
     public addingNewUser() {
         if (this.playerForm.invalid) { return; }
-        let arr = this.playerS.getNewPlayer(this.filter);
-        if (arr.length > 0 && this.playerForm.value.nickname === arr[arr.length - 1].nickname) {
-            alert('This nickname was reserved by another player');
-            return;
-        }
+        // let arr = this.playerS.getNewPlayer(this.filter);
+        // if (arr.length > 0 && this.playerForm.value.nickname === arr[arr.length - 1].nickname) {
+        //     alert('This nickname was reserved by another player');
+        //     return;
+        // }
         this.playerS.addNewPlayer(this.playerForm.value);
         this.router.navigate(['/selection']);
     }
 
-    // private nicknameValidator(control: FormControl): ValidationErrors {
-    //     const value = control.value;
-    //     if (this.playerS.getNewPlayer().length > 0) {
-    //         let players = this.playerS.getNewPlayer();
-    //         if (players[players.length - 1].nickname === value) {
-    //             players.splice(players.length - 1, 1);
-    //             return { invalidNickname: 'This nickname was reserved by another player'};
-    //         }       
-    //         return null;
-    //     }
-    // }
+    private nicknameValidator(control: FormControl): ValidationErrors {
+        const value = control.value;
+        this.arrayOfPlayers = this.playerS.getNewPlayer(this.filter);
+        if (this.arrayOfPlayers.length > 0) {
+            if (this.arrayOfPlayers[this.arrayOfPlayers.length - 1].nickname === value) {
+                this.arrayOfPlayers.splice(this.arrayOfPlayers.length - 1, 1);
+                return { invalidNickname: 'This nickname was reserved by another player'};
+            }       
+            return null;
+        }
+    }
 
     get nickname() { 
         return this.playerForm.get('nickname'); 

@@ -1,7 +1,7 @@
-<form class="form">
+<form class="form" (submit)="searching()">
     <div class="head">
-        <input id="search" type="search" placeholder="Search">
-        <button id="searchBtn" type="submit" (click)="searching()">&#128269;</button>
+        <input id="search" type="search" placeholder="Search" (keypress)="searching()">
+        <button id="searchBtn" type="submit"></button>
         <button id="newPlayer" (click)="newPlayer()">New player</button>
     </div>
     <div id="players">
@@ -16,7 +16,7 @@
                 font-weight: bold"
                 (click)="deleteUser(i)">X
             </div>
-        </div>
+        </div> 
     </div>
 </form> 
 

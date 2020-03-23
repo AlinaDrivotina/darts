@@ -63,16 +63,6 @@ export class PointsInputsComponent implements OnInit {
     get dart3() {
         return this.pointsForm.get('dart3');
     }
-  
-    public addAnotherPlayer() {
-        let game = this.gameS.getGame();
-        let length = this.playerS.pushingPlayer().length;
-        if (game === '501' && length === 3) {
-        return;
-        }
-        this.playerS.counter = 1;
-        this.router.navigate(['/selection']); 
-    }
 
     public submitPoints(e: any) {
         if (this.pointsForm.invalid) { return; }

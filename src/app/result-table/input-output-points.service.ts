@@ -12,6 +12,8 @@ export class InputOutputPointsService {
     public arr1: any [] = [];
     public arr2: any [] = [];
 
+    public checkSum: number = 0;
+
     public inputPointsForPlayer(a: any) {
         this.arr1.push(a);
     }
@@ -30,6 +32,7 @@ export class InputOutputPointsService {
         return (sum + current);
         });
 
+        this.checkSum = sumArr1;
         this.res1 -= sumArr1;
 
         if (this.res1 < 0) {
@@ -50,7 +53,7 @@ export class InputOutputPointsService {
 
         this.res2 -= sumArr2;
 
-        if (this.res2 === this.res1) {
+        if (sumArr2 === this.checkSum) {
             this.res2 += sumArr2;
         } else if (this.res2 < 0) {
             this.res2 += sumArr2;

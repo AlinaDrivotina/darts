@@ -17,7 +17,9 @@ export class PointsResultTableComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this.first = this.playerS.pushingPlayer()[0].nickname;
-        this.second = this.playerS.pushingPlayer()[this.playerS.pushingPlayer().length - 1].nickname;
+        if (this.playerS.pushingPlayer().length === 2) {
+            this.first = this.playerS.pushingPlayer()[0].nickname;
+            this.second = this.playerS.pushingPlayer()[this.playerS.pushingPlayer().length - 1].nickname;
+        }
     }
 }
