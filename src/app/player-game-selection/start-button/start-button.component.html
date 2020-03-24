@@ -1,3 +1,7 @@
-<div class="btn">
-    <button *ngIf="gameS.getGame() && playerS.playerNickname()" id="start" (click)="startGame()">Start</button>
+<div class="btn" *ngIf="(gameS.getGame()==='501' || gameS.getGame()==='301') && playerS.playerNickname()">
+    <div class="warnings" *ngIf="gameS.getGame()==='301' && playerS.pushingPlayer().length < 2">Please, choose 2 players.</div>
+    <div class="warnings" *ngIf="gameS.getGame()==='301' && playerS.pushingPlayer().length > 2">Too much players.<br>For this type of game you have to select 2 players.</div>
+    <div class="warnings" *ngIf="gameS.getGame()==='501' && playerS.pushingPlayer().length < 3">Please, choose 3 players.</div>
+    <div class="warnings" *ngIf="gameS.getGame()==='501' && playerS.pushingPlayer().length > 3">Too much players.<br>For this type of game you have to select 3 players.</div>
+    <button id="start" (click)="startGame()">Start</button>
 </div>

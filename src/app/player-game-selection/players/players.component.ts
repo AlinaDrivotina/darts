@@ -25,6 +25,8 @@ export class PlayersComponent implements OnInit {
     }
 
     public newPlayer() {
+        this.playerS.cleanPlayers();
+        this.gameS.cleanGame();
         this.router.navigate(['/new-player']);
     }
 

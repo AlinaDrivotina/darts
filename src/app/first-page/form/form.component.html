@@ -14,7 +14,7 @@
             maxlength="20"
             placeholder="Enter your nickname"
         />
-        <div class="error" *ngIf="nickname.invalid">
+        <div class="error" *ngIf="nickname.invalid && nickname.dirty">
             <div *ngIf="nickname.errors.required">
                 This field is required.
             </div>

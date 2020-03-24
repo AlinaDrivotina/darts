@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { FormGroup, Validators, FormBuilder, FormControl, ValidationErrors, ValidatorFn} from '@angular/forms';
+import { FormGroup, Validators, FormBuilder, FormControl, ValidationErrors} from '@angular/forms';
 import { PlayerService } from '../player.service';
 import { Router } from '@angular/router';
 
@@ -22,14 +22,14 @@ export class FormComponent implements OnInit {
         private router: Router, 
         ) {
         this.playerForm = this.formBuilder.group({
-        nickname: ["Player", [
+        nickname: [null, [
             Validators.required,
             Validators.maxLength(20),
             Validators.pattern("^[a-zA-Z]+$"),
-            this.nicknameValidator] 
+            this.nicknameValidator.bind(this)] 
         ],
         email: [null, Validators.email]
-        });
+        }); 
     }
 
     ngOnInit(): void {
@@ -38,23 +38,19 @@ export class FormComponent implements OnInit {
 
     public addingNewUser() {
         if (this.playerForm.invalid) { return; }
-        // let arr = this.playerS.getNewPlayer(this.filter);
-        // if (arr.length > 0 && this.playerForm.value.nickname === arr[arr.length - 1].nickname) {
-        //     alert('This nickname was reserved by another player');
-        //     return;
-        // }
         this.playerS.addNewPlayer(this.playerForm.value);
         this.router.navigate(['/selection']);
     }
+
 
     private nicknameValidator(control: FormControl): ValidationErrors {
         const value = control.value;
         this.arrayOfPlayers = this.playerS.getNewPlayer(this.filter);
         if (this.arrayOfPlayers.length > 0) {
-            if (this.arrayOfPlayers[this.arrayOfPlayers.length - 1].nickname === value) {
-                this.arrayOfPlayers.splice(this.arrayOfPlayers.length - 1, 1);
-                return { invalidNickname: 'This nickname was reserved by another player'};
-            }       
+            let check = this.arrayOfPlayers.find((el) => el.nickname === value);
+            if (check !== undefined) {
+                return { invalidNickname: 'This nickname was reserved by another player. Try to enter another nickname'};
+            } 
             return null;
         }
     }

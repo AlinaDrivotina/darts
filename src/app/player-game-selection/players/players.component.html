@@ -1,5 +1,30 @@
 <form class="form" (submit)="searching()">
     <div class="head">
+        <input id="search" type="search" placeholder="Search" (keyup)="searching()">
+        <button id="searchBtn" type="submit"></button>
+        <button id="newPlayer" (click)="newPlayer()">New player</button>
+    </div>
+    <div id="table" *ngFor="let player of playerS.getNewPlayer(this.filter); let i = index">
+      <div class="checkbox"><input (click)="userSelected(i)" type="checkbox"></div>
+      <div id="players">
+          <div class="user">
+              <div>{{ player.nickname }}</div>
+              <div>{{ player.email }}</div>
+              <div 
+                  style="width: 20px; 
+                  text-align: right; 
+                  color: rgba(54, 180, 238, 0.616); 
+                  font-size: 17px;
+                  font-weight: bold"
+                  (click)="deleteUser(i)">X
+              </div>
+          </div> 
+      </div>
+    </div>
+</form> 
+
+<!-- <form class="form" (submit)="searching()">
+    <div class="head">
         <input id="search" type="search" placeholder="Search" (keypress)="searching()">
         <button id="searchBtn" type="submit"></button>
         <button id="newPlayer" (click)="newPlayer()">New player</button>
@@ -18,6 +43,4 @@
             </div>
         </div> 
     </div>
-</form> 
-
-
+</form>  -->
